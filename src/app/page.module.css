@@ -1,0 +1,114 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.center {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--pink);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 12vw, 130px);
+  font-weight: 800;
+  line-height: 0.95;
+  color: var(--pink);
+  letter-spacing: -0.02em;
+}
+
+.pinkDot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(60px, 9vw, 112px);
+  height: clamp(60px, 9vw, 112px);
+  background: var(--pink);
+  border-radius: 50%;
+  color: var(--dark);
+  font-size: clamp(38px, 6.5vw, 78px);
+  font-weight: 800;
+  margin: 0 4px;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  margin-top: 8px;
+}
+
+.ctaBtn {
+  margin-top: 24px;
+  padding: 14px 40px;
+  background: transparent;
+  border: 1.5px solid var(--pink);
+  color: var(--pink);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--pink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  z-index: -1;
+}
+
+.ctaBtn:hover::before {
+  transform: scaleX(1);
+}
+
+.ctaBtn:hover {
+  color: var(--dark);
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.hint a {
+  color: var(--pink);
+  text-decoration: none;
+}
+
+.hint a:hover {
+  text-decoration: underline;
+}
