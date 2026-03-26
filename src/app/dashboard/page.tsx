@@ -4,6 +4,7 @@ import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useCallback } from "react";
 import { API_KEY, aptosClient } from "@/lib/shelby";
+import { AccountAddress } from "@aptos-labs/ts-sdk";
 import styles from "./dashboard.module.css";
 
 interface BlobFile {
@@ -110,7 +111,7 @@ export default function DashboardPage() {
 
       // Step 2: Register on-chain payload (signing handled by wallet)
       const payload = ShelbyBlobClient.createRegisterBlobPayload({
-        account: addrStr,
+        account: AccountAddress.fromString(addrStr),
         blobName: file.name,
         blobMerkleRoot: commitments.blob_merkle_root,
         numChunksets: Number(expectedTotalChunksets(commitments.raw_data_size)),
